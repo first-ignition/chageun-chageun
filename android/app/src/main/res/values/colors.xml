@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 창 배경(Compose가 그리기 전 잠깐 보이는 색). 화면 색은 ui/Theme.kt -->
+	<color name="app_bg">#FFF5F1EA</color>
+	<color name="icon_bg">#FF1B1A17</color>
+	<color name="icon_fg">#FFF6C453</color>
+	<color name="icon_check">#FF1B1A17</color>
+</resources>

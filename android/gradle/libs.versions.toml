@@ -1,0 +1,47 @@
+# 버전은 여기 한 곳에서만 관리한다. 바꿀 때는 docs/05_개발/결정기록.md에 이유를 남긴다.
+[versions]
+# Android 빌드 도구 (이 Mac의 ~/.gradle 캐시에 이미 있는 조합)
+agp = "8.7.3"
+kotlin = "2.0.21"
+
+# 앱 공통 SDK 수준 (Pleos 요건: minSdk 28 이상, compile/target 34)
+minSdk = "28"
+compileSdk = "34"
+targetSdk = "34"
+
+# AndroidX / Compose (compileSdk 34에서 쓸 수 있는 마지막 계열)
+coreKtx = "1.13.1"
+activityCompose = "1.9.3"
+lifecycle = "2.8.7"
+composeBom = "2024.09.03"
+
+# Pleos Connect SDK (2026-10-19 릴리스)
+pleosVehicle = "2.3.2"
+pleosNaviHelper = "3.0.5"
+pleosTts = "3.3.1"
+pleosStt = "3.3.1"
+pleosFusedLocation = "1.1.3"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+pleos-vehicle = { group = "ai.pleos.playground", name = "Vehicle", version.ref = "pleosVehicle" }
+pleos-navihelper = { group = "ai.pleos.playground", name = "NaviHelper", version.ref = "pleosNaviHelper" }
+pleos-tts = { group = "ai.pleos.playground", name = "TextToSpeech", version.ref = "pleosTts" }
+pleos-stt = { group = "ai.pleos.playground", name = "SpeechToText", version.ref = "pleosStt" }
+pleos-fusedlocation = { group = "ai.pleos.playground", name = "FusedLocation", version.ref = "pleosFusedLocation" }
+
+[bundles]
+compose = ["androidx-compose-ui", "androidx-compose-foundation", "androidx-compose-material3"]
+pleos = ["pleos-vehicle", "pleos-navihelper", "pleos-tts", "pleos-stt", "pleos-fusedlocation"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

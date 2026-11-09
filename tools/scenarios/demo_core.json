@@ -1,0 +1,17 @@
+[
+  {"say": "차근차근 핵심 시연: 오늘의 말 → 주행 중 조용히 감지 → 서면 칭찬"},
+  {"set": "hvac-defroster", "value": false, "area": "front_defroster_on"},
+  {"set": "gear-selection", "value": "Park"},
+  {"wait": 3},
+  {"shot": "demo1_탈때_오늘의말"},
+  {"set": "gear-selection", "value": "Drive"},
+  {"wait": 3},
+  {"shot": "demo2_주행중"},
+  {"say": "운전자가 글레오에게 '앞 유리 김 서림 없애 줘'라고 말한 결과: 앞 유리 제상 켜짐"},
+  {"set": "hvac-defroster", "value": true, "area": "front_defroster_on"},
+  {"wait": 3},
+  {"shot": "demo3_주행중_알아챔"},
+  {"set": "gear-selection", "value": "Park"},
+  {"wait": 3},
+  {"shot": "demo4_서서_칭찬"}
+]

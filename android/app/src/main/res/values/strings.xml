@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 가칭. 이름이 정해지면 여기 한 곳만 바꾼다 -->
+	<string name="app_name">차근차근</string>
+</resources>
